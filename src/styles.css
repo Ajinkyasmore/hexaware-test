@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+.forecastInner{
+    text-align: center;
+}
+.forecastInner img{
+    margin: auto;
+}
+.forecastInner h6{
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.forecastInner p{
+    font-size: 18px;
+}
+.weatherModel .modal-content{
+    border-radius: 0;
+}
+.weatherModel .modal-header {
+    background: #2a2a2a;
+    color: #e4e4e4;
+    padding: 10px 15px;
+}
+.weatherModel .modal-title{
+    font-size: 32px;
+    font-weight: bold;
+}
+.weatherModel .modal-header .close {
+    color: #fff;
+    text-shadow: none;
+    opacity: 0.8;
+    font-weight: normal;
+    font-size: 26px;
+    margin-top: 10px;
+}
+.customForm select{
+    width: 100%;
+    background: #e6e6e6;
+    border-radius: 0;
+    font-size: 18px;
+    border:none;
+    box-shadow: none;
+    height: 45px;
+}
+.arrow-up,.arrow-down {
+    display: inline-block;
+    border: solid gray;
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+}
+.form-group .text.text-danger{
+    position: absolute;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.3;
+    height: calc(125%);
+}
+.arrow-up    { 
+    transform: rotate(-135deg);
+    bottom: 22px; 
+}
+.arrow-down  { 
+    transform: rotate(45deg);
+    bottom: 12px; 
+}
+.form-group{
+    margin-bottom: 0;
+    position: relative;
+}
+.customForm label{
+    font-size: 32px;
+    font-weight: bold;
+}
+.customForm .form-control:focus {
+    border-color:none;
+    outline: 0;
+    box-shadow: none;
+}
+.weatherModel .btn-danger.focus,.weatherModel .btn-danger:focus {
+    background: #d9534f;
+    border-color: #761c19;
+    border: none;
+    outline: none;
+}
+.weatherModel .btn-danger {
+    border-radius: 0;
+    box-shadow: none;
+    height: 45px;
+    width: 170px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.weatherModel.modal {
+    display: block !important;
+}
+.weatherModel.modal.fade{
+    opacity: 1 !important;
+    background:radial-gradient(gray, transparent);
+    overflow-y: auto;
+}
+.weatherModel .modal-dialog.modal-lg{
+    top: 140px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+select::-ms-expand {
+    display: none;
+}
+
+@media (min-width:756px)  {
+    
+}
+
+

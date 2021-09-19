@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Click on below button to check Weather Forecast</h3>
+    </div>
+    <div class="col-md-12">
+      <button type="button" class="btn btn-primary" data-toggle="modal" (click)="modelAction()">Check Weather
+        Forecast</button>
+    </div>
+  </div>
+</div>
+
+<!-- model starts here -->
+<div class="modal fade bs-example-modal-lg weatherModel" *ngIf="showModelBool">
+  <div class="overlay"></div>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close"><span
+            aria-hidden="true" (click)="modelAction()">X</span></button>
+        <h4 class="modal-title" id="myModalLabel">Weather Forecast</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" *ngIf="errorShowBool">
+          {{errorMessage}}
+        </div>
+        <!-- city dropdown starts -->
+        <form [formGroup]="waetherForecastForm" class="customForm">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="form-group">
+                <label for="city">City</label>
+                <div class="arrow-up"></div>
+                <div class="arrow-down"></div>
+                <select class="form-control" formControlName='city' (change)="fetchCityRecords()">
+                  <option *ngFor="let item of cityOptions; let i = index" [value]="item.value"  
+                  [selected]="i == 0">
+                    {{item.name}}
+                  </option>
+                </select>
+                <p class="text text-danger" *ngIf=" !waetherForecastForm.get('city').valid && waetherForecastForm.get('city').touched"> 
+                  City is required field!
+                </p>
+              </div>
+            </div><!-- city dropdown ends -->
+          </div>
+        </form>
+        <!-- weather forcast section starts -->
+        <div class="row">
+          <div class="col-md-3  col-sm-3" *ngFor="let item of waetherForecastData">
+            <div class="forecastInner">
+              <h6>{{item?.datetime | date : 'EEEE '}}<br>{{item?.datetime | date : 'MMM dd'}}</h6>
+              <img [src]="item.imagePath"  [title]="item?.weather?.description" alt="" class="img-responsive">
+              <p>{{item?.temp}} <sup>o</sup>C</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button (click)="fetchCityRecords()" class="btn btn-danger  pull-right">Apply</button>
+          </div>
+        </div>
+        <!-- weather forcast section ends -->
+      </div>
+    </div>
+  </div>
+</div>
